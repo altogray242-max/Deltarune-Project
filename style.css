@@ -26,8 +26,9 @@ h1, h2 {
 }
 
 img {
-  max-width: 200px;
-  margin: 20px;
+  max-width: 1920px;
+  max-height: 1560px;
+  margin: 0 auto;
 }
 
 footer {
