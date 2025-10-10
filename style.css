@@ -1,38 +1,156 @@
-body {
+/* =========================
+   DELTARUNE-STYLE THEME
+   Merged with your original CSS
+   ========================= */
+
+/* Import pixel font */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* Base reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
   margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: black;
-  color: white;
-  text-align: center;
+  padding: 0;
 }
 
+/* Root color variables for quick edits */
+:root {
+  --bg: #000000;
+  --header-bg: #111111;
+  --accent: cyan;
+  --text: #ffffff;
+  --muted: #aaaaaa;
+}
+
+/* Body */
+body {
+  margin: 0;
+  font-family: 'Press Start 2P', Arial, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  text-align: center;
+  line-height: 1.6;
+  letter-spacing: 0.03em;
+  overflow-x: hidden;
+}
+
+/* Header */
 header {
-  background-color: #111;
+  background-color: var(--header-bg);
   padding: 20px;
+  border-bottom: 2px solid var(--accent);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+}
+
+/* Navigation */
+nav {
+  margin-top: 10px;
 }
 
 nav a {
   margin: 0 15px;
-  color: cyan;
+  color: var(--accent);
   text-decoration: none;
+  transition: all 0.2s ease-in-out;
 }
 
 nav a:hover {
   text-decoration: underline;
+  text-shadow: 0 0 8px var(--accent);
 }
 
+/* Headings */
 h1, h2 {
-  color: cyan;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin: 20px 0;
+  text-shadow: 0 0 8px var(--accent);
 }
 
+/* Image styling (your original settings preserved) */
 img {
+  display: block;
   max-width: 1920px;
   max-height: 1560px;
-  margin: 0 auto;
+  margin: 20px auto;
+  border-radius: 8px;
+  border: 2px solid rgba(0, 255, 255, 0.2);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.1);
+  image-rendering: pixelated; /* keeps Deltarune pixel feel */
 }
 
+/* Section containers */
+section {
+  padding: 30px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+  border-radius: 12px;
+  margin: 30px auto;
+  max-width: 1000px;
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 0 25px rgba(0,255,255,0.05);
+}
+
+/* Footer */
 footer {
   margin-top: 50px;
   padding: 20px;
-  background: #111;
+  background: var(--header-bg);
+  border-top: 2px solid var(--accent);
+  color: var(--muted);
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+}
+
+/* Buttons or CTA links */
+a.button {
+  display: inline-block;
+  background: var(--accent);
+  color: black;
+  padding: 10px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  margin: 10px;
+  font-size: 0.75rem;
+  transition: all 0.2s ease;
+}
+
+a.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px var(--accent);
+}
+
+/* Subtle CRT scanline effect (optional aesthetic) */
+.scanlines {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 100% 4px;
+  opacity: 0.05;
+  z-index: 9999;
+  mix-blend-mode: overlay;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  section {
+    padding: 20px;
+    margin: 20px;
+  }
+
+  h1, h2 {
+    font-size: 0.9rem;
+  }
+
+  nav a {
+    display: inline-block;
+    margin: 5px;
+    font-size: 0.7rem;
+  }
+
+  a.button {
+    padding: 8px 12px;
+  }
 }
